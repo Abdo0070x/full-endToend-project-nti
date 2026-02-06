@@ -94,7 +94,6 @@ jobs:
         run: |
           docker build -t image-backend:${IMAGE_VERSION} ./backend
           docker tag image-backend:${IMAGE_VERSION} \
-             
             352247465921.dkr.ecr.us-east-1.amazonaws.com/micro-backend:${IMAGE_VERSION}
           docker push 352247465921.dkr.ecr.us-east-1.amazonaws.com/micro-backend:${IMAGE_VERSION}
 
