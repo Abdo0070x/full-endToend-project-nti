@@ -107,6 +107,8 @@ jobs:
             352247465921.dkr.ecr.us-east-1.amazonaws.com/micro-frontend:${IMAGE_VERSION}
           docker push 352247465921.dkr.ecr.us-east-1.amazonaws.com/micro-frontend:${IMAGE_VERSION}
       # CD Deploy
+
+
       - name: Update Helm values 
         run: | 
            sed -i "s/tag:.*/tag: $IMAGE_TAG/" CD-master/values.yml
