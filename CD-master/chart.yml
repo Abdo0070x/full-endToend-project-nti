@@ -1,0 +1,7 @@
+apiVersion: v2
+name: micro-app
+description: Microservices app (frontend, backend, postgres, redis)
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+

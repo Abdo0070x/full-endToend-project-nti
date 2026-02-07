@@ -1,0 +1,37 @@
+namespace: micro-prod
+
+backend:
+  image: ahmed3013/backend
+  tag: latest
+  replicas: 1
+  port: 8000
+  env:
+    ALLOWED_HOSTS: "myapp.local,localhost,127.0.0.1"
+
+frontend:
+  image: ahmed3013/frontend
+  tag: latest
+  replicas: 1
+  port: 80
+
+redis:
+  image: redis
+  tag: "7"
+  port: 6379
+
+database:
+  type: rds
+  host: mydb.xxxxxx.eu-central-1.rds.amazonaws.com
+  port: "5432"
+  name: appdb
+  user: appuser
+  password: changeme   
+
+ingress:
+  enabled: true
+  className: alb
+  scheme: internet-facing        # or internal
+  targetType: ip
+  certificateArn: arn:aws:acm:us-east-1:695094375859:certificate/e3e60314-0f42-47a7-9e13-2c576bd44271
+  host: myapp.example.com
+
