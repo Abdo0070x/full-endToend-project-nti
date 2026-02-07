@@ -1,8 +1,8 @@
 namespace: micro-prod
 
 backend:
-  image: 352247465921.dkr.ecr.us-east-1.amazonaws.com/micro-backend
-  tag: "5.0"
+  image: ahmed3013/backend
+  tag: latest
   imagePullPolicy: Always
   replicas: 1
   port: 8000
@@ -10,8 +10,8 @@ backend:
     ALLOWED_HOSTS: "https://abdd6374593494cb9bb8dd9ee99af2ce-2055544092.us-east-1.elb.amazonaws.com,myapp.local,localhost,127.0.0.1"
 
 frontend:
-  image: 352247465921.dkr.ecr.us-east-1.amazonaws.com/micro-frontend
-  tag: "5.0"
+  image: ahmed3013/frontend
+  tag: latest
   imagePullPolicy: Always
   replicas: 1
   port: 80
