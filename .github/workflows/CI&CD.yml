@@ -111,12 +111,12 @@ jobs:
 
       - name: Update Helm values 
         run: | 
-           sed -i "s/tag:.*/tag: $IMAGE_TAG/" CD-master/values.yml
+           sed -i "s/tag:.*/tag: $IMAGE_TAG/" CD-master/values.yaml
            
       - name: Commit and push Helm changes
         run: |
           git config --global user.name "Abdelrahman safwat" 
           git config --global user.email "abdosafwat12345@gmail.com" 
-          git add CD-master/values.yml 
+          git add CD-master/values.yaml 
           git commit -m "Update image tag to $IMAGE_TAG" || echo "No changes" 
           git push
