@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Abdo0070x/full-endToend-project-nti.git
+    repoURL: https://github.com/Ahmed-wa7eed/NTI-Task-CD.git
     targetRevision: main
     path: k8s
   destination:

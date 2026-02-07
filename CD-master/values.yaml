@@ -2,7 +2,7 @@ namespace: micro-prod
 
 backend:
   image: 352247465921.dkr.ecr.us-east-1.amazonaws.com/micro-backend
-  tag: latest
+  tag: "5.0"
   imagePullPolicy: Always
   replicas: 1
   port: 8000
@@ -11,14 +11,14 @@ backend:
 
 frontend:
   image: 352247465921.dkr.ecr.us-east-1.amazonaws.com/micro-frontend
-  tag: latest
+  tag: "5.0"
   imagePullPolicy: Always
   replicas: 1
   port: 80
-  
+
 redis:
   image: redis
-  tag: 
+  tag: "7"
   port: 6379
 
 database:
