@@ -35,5 +35,4 @@ ingress:
   scheme: internet-facing        
   targetType: ip
   certificateArn: arn:aws:acm:us-east-1:352247465921:certificate/b16c04b4-bfb7-4867-8d20-0907c2d41ddd
-  host: myapp.example.com
-
+  host: http://ab450ed9c19e149808f12a560d5a074d-127603676.us-east-1.elb.amazonaws.com
