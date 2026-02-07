@@ -2,7 +2,8 @@ namespace: micro-prod
 
 backend:
   image: 352247465921.dkr.ecr.us-east-1.amazonaws.com/micro-backend
-  tag: 
+  tag: latest
+  imagePullPolicy: Always
   replicas: 1
   port: 8000
   env:
@@ -10,10 +11,11 @@ backend:
 
 frontend:
   image: 352247465921.dkr.ecr.us-east-1.amazonaws.com/micro-frontend
-  tag: 
+  tag: latest
+  imagePullPolicy: Always
   replicas: 1
   port: 80
-
+  
 redis:
   image: redis
   tag: 
@@ -30,7 +32,7 @@ database:
 ingress:
   enabled: true
   className: alb
-  scheme: internet-facing        # or internal
+  scheme: internet-facing        
   targetType: ip
   certificateArn: arn:aws:acm:us-east-1:352247465921:certificate/b16c04b4-bfb7-4867-8d20-0907c2d41ddd
   host: myapp.example.com
