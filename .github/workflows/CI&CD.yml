@@ -107,9 +107,14 @@ jobs:
             352247465921.dkr.ecr.us-east-1.amazonaws.com/micro-frontend:${IMAGE_VERSION}
           docker push 352247465921.dkr.ecr.us-east-1.amazonaws.com/micro-frontend:${IMAGE_VERSION}
       # CD Deploy
+      # - name: Update Helm values
+      #   run: |
+      #     sed -i '/backend:/,/tag:/ s/tag:.*/tag: ' "${IMAGE_VERSION}"'/' CD-master/values.yaml
+      #     sed -i '/frontend:/,/tag:/ s/tag:.*/tag: '"${IMAGE_VERSION}"'/' CD-master/values.yaml
+
       - name: Update Helm values
-        run: |
-          sed -i '/backend:/,/tag:/ s/tag:.*/tag: ' "${IMAGE_VERSION}"'/' CD-master/values.yaml
+        run: |  
+          sed -i '/backend:/,/tag:/ s/tag:.*/tag: '"${IMAGE_VERSION}"'/' CD-master/values.yaml
           sed -i '/frontend:/,/tag:/ s/tag:.*/tag: '"${IMAGE_VERSION}"'/' CD-master/values.yaml
 
       - name: Commit and push Helm changes
