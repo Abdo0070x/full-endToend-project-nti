@@ -2,7 +2,7 @@ namespace: micro-prod
 
 backend:
   image: 352247465921.dkr.ecr.us-east-1.amazonaws.com/micro-backend
-  tag: latest
+  tag: 
   replicas: 1
   port: 8000
   env:
@@ -10,13 +10,13 @@ backend:
 
 frontend:
   image: 352247465921.dkr.ecr.us-east-1.amazonaws.com/micro-frontend
-  tag: latest
+  tag: 
   replicas: 1
   port: 80
 
 redis:
   image: redis
-  tag: "7"
+  tag: 
   port: 6379
 
 database:
