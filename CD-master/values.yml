@@ -1,15 +1,15 @@
 namespace: micro-prod
 
 backend:
-  image: ahmed3013/backend
+  image: 352247465921.dkr.ecr.us-east-1.amazonaws.com/micro-backend
   tag: latest
   replicas: 1
   port: 8000
   env:
-    ALLOWED_HOSTS: "myapp.local,localhost,127.0.0.1"
+    ALLOWED_HOSTS: "https://abdd6374593494cb9bb8dd9ee99af2ce-2055544092.us-east-1.elb.amazonaws.com,myapp.local,localhost,127.0.0.1"
 
 frontend:
-  image: ahmed3013/frontend
+  image: 352247465921.dkr.ecr.us-east-1.amazonaws.com/micro-frontend
   tag: latest
   replicas: 1
   port: 80
@@ -21,17 +21,17 @@ redis:
 
 database:
   type: rds
-  host: mydb.xxxxxx.eu-central-1.rds.amazonaws.com
+  host: micro-postgres.c6da8686exj5.us-east-1.rds.amazonaws.com
   port: "5432"
   name: appdb
-  user: appuser
-  password: changeme   
+  user: postgres
+  password: strongpassword123!   
 
 ingress:
   enabled: true
   className: alb
   scheme: internet-facing        # or internal
   targetType: ip
-  certificateArn: arn:aws:acm:us-east-1:695094375859:certificate/e3e60314-0f42-47a7-9e13-2c576bd44271
+  certificateArn: arn:aws:acm:us-east-1:352247465921:certificate/b16c04b4-bfb7-4867-8d20-0907c2d41ddd
   host: myapp.example.com
 
